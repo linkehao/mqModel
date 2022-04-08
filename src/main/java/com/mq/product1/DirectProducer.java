@@ -4,7 +4,7 @@ import com.mq.util.MsgProducer;
 import com.rabbitmq.client.BuiltinExchangeType;
 
 public class DirectProducer {
-    private static final String EXCHANGE_NAME = "direct.exchange1";
+    private static final String EXCHANGE_NAME = "direct.exchange";
     public void publishMsg(String queueName, String routingKey, String msg) {
         try {
             MsgProducer.publishMsg(EXCHANGE_NAME, BuiltinExchangeType.DIRECT, queueName, routingKey, msg);

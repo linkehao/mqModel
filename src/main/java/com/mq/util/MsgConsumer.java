@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
 public class MsgConsumer {
-    public static void consumerMsg(String exchange, String queue, String routingKey)
+    public static void consumerMsg(String queue, String routingKey)
             throws IOException, TimeoutException {
         ConnectionFactory factory = RabbitUtil.getConnectionFactory();
         //创建连接

@@ -6,10 +6,9 @@ import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
 public class DirectConsumer {
-    private static final String exchangeName = "direct.exchange1";
     public void msgConsumer(String queueName, String routingKey) {
         try {
-            MsgConsumer.consumerMsg(exchangeName, queueName, routingKey);
+            MsgConsumer.consumerMsg( queueName, routingKey);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (TimeoutException e) {
@@ -25,6 +24,6 @@ public class DirectConsumer {
         for (int i = 0; i < 3; i++) {
             consumer.msgConsumer(queueNames[i], routingKey[i]);
         }
-        Thread.sleep(1000 * 6);
+//        Thread.sleep(1000 * 6);
     }
 }
