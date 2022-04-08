@@ -1,4 +1,4 @@
-package com.mq.Producer;
+package com.mq.producer;
 
 import com.mq.config.RabbitMQTopicConfig;
 import org.springframework.amqp.core.AmqpTemplate;
