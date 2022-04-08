@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
 public class DirectConsumer {
-    private static final String exchangeName = "direct.exchange";
+    private static final String exchangeName = "direct.exchange1";
     public void msgConsumer(String queueName, String routingKey) {
         try {
             MsgConsumer.consumerMsg(exchangeName, queueName, routingKey);
@@ -20,9 +20,9 @@ public class DirectConsumer {
     public static void main(String[] args) throws InterruptedException {
         DirectConsumer consumer = new DirectConsumer();
         String[] routingKey = new String[]{"aaa", "bbb", "ccc"};
-        String[] queueNames = new String[]{"qa", "qb", "qc"};
+        String[] queueNames = new String[]{"qa", "qb", "qc1"};
 
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 3; i++) {
             consumer.msgConsumer(queueNames[i], routingKey[i]);
         }
         Thread.sleep(1000 * 6);
